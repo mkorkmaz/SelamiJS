@@ -1,11 +1,11 @@
-const path = require('path');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
- 
+const path = require("path");
+const LiveReloadPlugin = require("webpack-livereload-plugin");
+
 module.exports = {
-  entry: './src/js/entry.js',
+  entry: "./src/js/entry.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public/dist')
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "public/dist")
   },
   resolve: {
     alias: {
@@ -13,19 +13,22 @@ module.exports = {
     }
   },
   module: {
-    rules: [
-    {
-        test: /\.css$/,
-         use: [
-           'style-loader',
-            { 
-              loader: 'css-loader', options: { minimize: true } 
-            }
-         ]
-       }
-     ]
-   },
-   plugins: [
-    new LiveReloadPlugin({'appendScriptTag': true})
+    rules: [{
+      test: /\.css$/,
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            minimize: true
+          }
+        }
+      ]
+    }]
+  },
+  plugins: [
+    new LiveReloadPlugin({
+      "appendScriptTag": true
+    })
   ]
-}
+};
