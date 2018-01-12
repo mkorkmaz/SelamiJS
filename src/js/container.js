@@ -2,7 +2,7 @@ import config from "./config";
 import Bottle from "bottlejs";
 import App from "./Domains/Main/App";
 import Module from "./Domains/Main/Module";
-import $ from "jquery"
+import $ from "jquery";
 
 const bottle = new Bottle();
 bottle.value("config", config);
@@ -17,6 +17,5 @@ bottle.factory("App", function(container) {
     let module = container.Module;
     return new App(config, module);
 });
-
 
 export default bottle;
