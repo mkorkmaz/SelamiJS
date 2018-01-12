@@ -8,6 +8,6 @@ export default class {
     run() 
     {
         this.myModule.print();
-        $('#app').append('<p>App version is: ' + this.config.app.ver + '</p>');
+        $("#app").append("<p>App version is: " + this.config.app.ver + "</p>");
     }
 }

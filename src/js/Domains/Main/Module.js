@@ -1,4 +1,4 @@
-import css from '../../../assets/main.css';
+import css from "../../../assets/main.css";
 
 export default class{
 
@@ -9,8 +9,8 @@ export default class{
 
     print() 
     {
-        $('#app').append('<p>' + this.config.name + '</p>');
-        $('#app').append('<p>Module version is: ' + this.config.ver + '</p>');
+        $("#app").append("<p>" + this.config.name + "</p>");
+        $("#app").append("<p>Module version is: " + this.config.ver + "</p>");
 
     }
 }
