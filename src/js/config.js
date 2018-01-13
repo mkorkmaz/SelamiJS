@@ -1,8 +1,8 @@
-import merge  from "deepmerge";
+import merge from "deepmerge";
 
-import globalConfig from "./autoload/global";
-import localConfig from "./autoload/local";
-import moduleConfig from "./autoload/module.local"; 
+import globalConfig from "./Config/global";
+import localConfig from "./Config/local";
+import moduleConfig from "./Config/module.local"; 
 
 const config = merge.all([globalConfig, localConfig, moduleConfig]);
 
