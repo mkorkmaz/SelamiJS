@@ -4,3 +4,7 @@
         color: #fff;
         padding:20px;
     }
+    .hello-user {
+        font-weight: 400;
+        text-decoration: underline;
+    }

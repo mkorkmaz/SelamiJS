@@ -1,7 +1,7 @@
 import config from "./config";
 import Bottle from "bottlejs";
-import App from "./Domains/Main/App";
-import Module from "./Domains/Main/Module";
+import App from "Domains/Main/App";
+import Module from "Domains/Main/Module";
 import $ from "jquery";
 
 const bottle = new Bottle();

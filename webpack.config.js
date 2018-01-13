@@ -9,22 +9,28 @@ module.exports = {
   },
   resolve: {
     alias: {
-      jquery: "jquery/src/jquery"
+      jquery: "jquery/src/jquery",
+      Templates: path.resolve(__dirname, 'src/templates/'),
+      Domains: path.resolve(__dirname, 'src/js/domains/')
     }
   },
   module: {
-    rules: [{
-      test: /\.css$/,
-      use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            minimize: true
+    rules: [
+      {
+        test: /\.(njk|nunjucks)$/,
+        loader: 'nunjucks-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {minimize: true}
           }
-        }
-      ]
-    }]
+        ]
+      }
+    ],
   },
   plugins: [
     new LiveReloadPlugin({
