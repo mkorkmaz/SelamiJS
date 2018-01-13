@@ -3,7 +3,7 @@ import ModuleService from "App/MyModule";
 
 function AppFactory (container) {
     let config = container.config;
-    let module = container.Module;
+    let module = container.ModuleService;
     return new AppService(config, module);
 }
 
