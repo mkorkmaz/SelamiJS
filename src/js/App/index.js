@@ -1,12 +1,11 @@
-
 export default class {
 
-    constructor(config, myModule){
+    constructor(config, myModule) {
         this.config = config;
         this.myModule = myModule;
     }
-    run() 
-    {
+
+    run() {
         this.myModule.print();
         $("#app").append("<p>App version is: " + this.config.app.ver + "</p>");
     }

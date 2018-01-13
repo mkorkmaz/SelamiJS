@@ -11,15 +11,17 @@ module.exports = {
   resolve: {
     alias: {
       jquery: "jquery/src/jquery",
-      Templates: path.resolve(__dirname, 'src/templates/'),
-      Domains: path.resolve(__dirname, 'src/js/domains/')
+      Domains: path.resolve(__dirname, "src/js/Domains/"),
+      Factories: path.resolve(__dirname, "src/js/Factories/"),
+      App: path.resolve(__dirname, "src/js/App/"),
+      Templates: path.resolve(__dirname, "src/templates/")
     }
   },
   module: {
     rules: [
       {
         test: /\.(njk|nunjucks)$/,
-        loader: 'nunjucks-loader'
+        loader: "nunjucks-loader"
       },
       {
         test: /\.css$/,
