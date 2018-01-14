@@ -10,4 +10,5 @@ bottle.value("config", config);
 bottle.factory("AppService", AppFactory);
 bottle.factory("ContentService", ContentFactory);
 bottle.factory("MyModuleService", ModuleFactory);
+
 export default bottle;

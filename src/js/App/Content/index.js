@@ -1,5 +1,4 @@
 import HomeTemplate from "Templates/content/home.njk";
-
 export default class {
 
     constructor(config) {

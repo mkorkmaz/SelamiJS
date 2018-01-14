@@ -16,16 +16,24 @@ export default class {
     dispatch() {
         let controller = this.pascalCase(this.controllerInfo[0]) + "Service";
         let method = this.camelCase(this.controllerInfo[1]);
-        if (typeof this.container[controller] === "undefined") {
-            let ContentServiceForController =  this.container.ContentService;
+        this.checkIfControllerExists(controller);
+        let Controller = this.container[controller];
+        this.checkIfControllerHasMethod(Controller, method);
+        return Controller[method]();
+    }
+
+    checkIfControllerExists(controller) {
+        const validServices = Object.keys(this.container);
+        if (validServices.indexOf(controller) === -1) {
             throw "Controller `" + controller + "` couldn't be found!";
         }
-        let Controller = this.container[controller];
-        if (typeof Controller[method] === "undefined") {
-            let ContentServiceForMethod =  this.container.ContentService;
+    }
+
+    checkIfControllerHasMethod(controller, method) {
+        const validMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(controller));
+        if (validMethods.indexOf(method) === -1) {
             throw "Method `" + controller + "." + method + "` couldn't be found!";
         }
-        return Controller[method]();
     }
 
     getControllerInfo() {
