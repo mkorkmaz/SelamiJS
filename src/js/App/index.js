@@ -1,29 +1,35 @@
-import page from 'page';
+import page from "page";
 
 export default class {
 
     constructor(config, myModule) {
         this.config = config;
         this.myModule = myModule;
-        this.setRoutes();
+        this.appState = {
+            loaded : 0
+        };
     }
 
     setRoutes() {
-        page('/', this.welcome);
-        page('/action-list-user', this.listUsers);
-        page();
+        page("/", this.welcome);
+        page("/action-list-user", this.listUsers);
+        page("*", this.welcome);
+        page({hashbang: true});
     }
 
     run() {
-        this.myModule.print();
-        $("#app").append("<p>App version is: " + this.config.app.ver + "</p>");
+        this.setRoutes();
     }
 
     listUsers() {
-        console.log('list_users');
+        console.log(App.appState.loaded);
+        console.log("list_users");
     }
 
     welcome() {
-        console.log('welcome');
+        App.appState.loaded = 1;
+        console.log("welcome");
+        App.myModule.print();
+        $("#app").append("<p>App version is: " + App.config.app.ver + "</p>");
     }
 }

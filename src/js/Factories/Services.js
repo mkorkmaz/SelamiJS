@@ -13,10 +13,4 @@ function ModuleFactory (container) {
     return new ModuleService(config.module);
 }
 
-
-function ModuleFactory (container) {
-    const config = container.config;
-    return new ModuleService(config.module);
-}
-
 export {AppFactory, ModuleFactory};
