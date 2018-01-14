@@ -16,7 +16,7 @@ export default class {
     dispatch() {
         const controller = this.pascalCase(this.controllerInfo.shift()) + "Service";
         const method = this.camelCase(this.controllerInfo.shift());
-        return {"controller": controller, "method": method, "args" : this.controllerInfo};
+        return {controller, method, "args" : this.controllerInfo};
         
     }
 
