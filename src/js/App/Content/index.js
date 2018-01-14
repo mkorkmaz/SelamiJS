@@ -11,6 +11,6 @@ export default class {
     }
 
     notFound() {
-        $('#console').html((new Date()).toDateString() + ": 404 - Not Found");
+        $("#console").html((new Date()).toDateString() + ": 404 - Not Found");
     }
 }

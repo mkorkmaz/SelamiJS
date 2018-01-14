@@ -4,7 +4,7 @@ let config = {
         "name": "Bootstrap with BottleJS and Webpack"
     },
     "router": {
-        "defaultRoute": 'content/home'
+        "defaultRoute": "content/home"
     }
 };
 

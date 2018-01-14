@@ -12,7 +12,7 @@ export default class {
     }
 
     setRoutes() {
-        page("*", this.dispatcher);
+        page("*", App.dispatcher);
         page({hashbang: true});
     }
 

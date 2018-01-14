@@ -8,7 +8,7 @@ export default class {
     }
 
     print() {
-        $("#app").html('');
+        $("#app").html("");
         $("#app").append("<p style='text-decoration: underline;'>" + this.config.name + "</p>");
         $("#app").append("<p>Module version is: " + this.config.ver + "</p>");
         $("#app").append(MainTemplate.render({"name": "John Doe"}));
