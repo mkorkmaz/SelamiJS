@@ -22,7 +22,7 @@ export default class {
 
     dispatcher (ctx, next) {
         const RunningApp = SelamiApp;
-        const Router = new SelamiRouter(RunningApp.container, SelamiApp.config.router);
+        const Router = new SelamiRouter(RunningApp.container, RunningApp.config.router);
         Router.dispatcher(ctx);
         const controllerInfo = Router.dispatch();
         RunningApp.checkIfControllerExists(controllerInfo.controller);
