@@ -39,5 +39,10 @@ module.exports = {
     new LiveReloadPlugin({
       "appendScriptTag": true
     })
-  ]
+  ],
+  devServer: {
+    compress: true,
+    historyApiFallback: true,
+    contentBase: './public'
+  }
 };

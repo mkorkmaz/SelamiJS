@@ -1,8 +1,8 @@
 {
-  "name": "front-end-bootstrap",
+  "name": "SelamiJS",
   "version": "1.0.0",
   "description": "Using BootleJs and Webpack",
-  "main": "index.js",
+  "main": "src/entry.js",
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,13 +12,14 @@
   "license": "MIT",
   "devDependencies": {
     "bottlejs": "^1.6.3",
-    "jquery": "^3.2.1",
-    "deepmerge": "^2.0.1",
-    "nunjucks": "^3.0.1",
     "css-loader": "^0.28.8",
+    "deepmerge": "^2.0.1",
     "imports-loader": "^0.7.1",
+    "jquery": "^3.2.1",
     "jslint": "^0.11.0",
+    "nunjucks": "^3.0.1",
     "nunjucks-loader": "^2.4.8",
+    "page": "^1.7.1",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.1",
