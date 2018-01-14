@@ -14,12 +14,12 @@ export default class {
     }
 
     dispatch() {
-        const controller = this.pascalCase(this.controllerInfo[0]) + "Service";
-        const method = this.camelCase(this.controllerInfo[1]);
+        const controller = this.pascalCase(this.controllerInfo.shift()) + "Service";
+        const method = this.camelCase(this.controllerInfo.shift());
         this.checkIfControllerExists(controller);
         const Controller = this.container[controller];
         this.checkIfControllerHasMethod(Controller, method);
-        return Controller[method]();
+        return Controller[method](this.controllerInfo);
     }
 
     checkIfControllerExists(controller) {

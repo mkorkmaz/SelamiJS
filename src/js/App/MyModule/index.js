@@ -7,7 +7,7 @@ export default class {
         this.config = config;
     }
 
-    print() {
+    print(parameters) {
         $("#app").html("");
         $("#app").append("<p style='text-decoration: underline;'>" + this.config.name + "</p>");
         $("#app").append("<p>Module version is: " + this.config.ver + "</p>");
