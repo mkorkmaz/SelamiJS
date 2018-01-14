@@ -1,19 +1,18 @@
 import page from "page";
+import SelamiRouter from "../router";
 
 export default class {
 
-    constructor(config, myModule) {
+    constructor(config, container) {
         this.config = config;
-        this.myModule = myModule;
+        this.container = container;
         this.appState = {
             loaded : 0
         };
     }
 
     setRoutes() {
-        page("/", this.welcome);
-        page("/action-list-user", this.listUsers);
-        page("*", this.welcome);
+        page("*", this.dispatcher);
         page({hashbang: true});
     }
 
@@ -21,15 +20,9 @@ export default class {
         this.setRoutes();
     }
 
-    listUsers() {
-        console.log(App.appState.loaded);
-        console.log("list_users");
-    }
-
-    welcome() {
-        App.appState.loaded = 1;
-        console.log("welcome");
-        App.myModule.print();
-        $("#app").append("<p>App version is: " + App.config.app.ver + "</p>");
+    dispatcher (ctx, next) {
+        const Router = new SelamiRouter(App.container, App.config.router);
+        Router.dispatcher(ctx);
+        Router.dispatch();
     }
 }

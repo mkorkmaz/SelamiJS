@@ -1,16 +1,20 @@
 import AppService from "App";
 import ModuleService from "App/MyModule";
+import ContentService from "App/Content";
 
-function AppFactory (container) {
+function AppFactory(container) {
     const config = container.config;
-    const module = container.ModuleService;
-    return new AppService(config, module);
+    return new AppService(config, container);
 }
 
-
-function ModuleFactory (container) {
+function ModuleFactory(container) {
     const config = container.config;
     return new ModuleService(config.module);
 }
 
-export {AppFactory, ModuleFactory};
+function ContentFactory(container) {
+    const config = container.config;
+    return new ContentService();
+}
+
+export {AppFactory, ContentFactory, ModuleFactory};
