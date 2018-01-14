@@ -61,7 +61,7 @@ export default class {
         const items = str.split("-");
         for (let index = 0; index < items.length; index++) {
             let item = items[index];
-            items[index] = (index===0 ? item[0].toLowerCase(): item[0].toUpperCase()) + item.slice(1).toLowerCase();
+            items[index] = (index === 0 ? item[0].toLowerCase(): item[0].toUpperCase()) + item.slice(1).toLowerCase();
         }
         return items.join("").replace(/\W+/g, ""); 
     }
