@@ -9,6 +9,7 @@ export default class {
     }
 
     setRoutes() {
+        page('/', this.welcome);
         page('/action-list-user', this.listUsers);
         page();
     }
@@ -20,5 +21,9 @@ export default class {
 
     listUsers() {
         console.log('list_users');
+    }
+
+    welcome() {
+        console.log('welcome');
     }
 }
