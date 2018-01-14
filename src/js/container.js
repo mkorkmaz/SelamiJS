@@ -10,5 +10,8 @@ bottle.value("config", config);
 
 bottle.factory("AppService", AppFactory);
 bottle.factory("ModuleService", ModuleFactory);
+const App = bottle.container.AppService;
+window.App = App;
+App.run();
 
-export default bottle;
+export default App;
