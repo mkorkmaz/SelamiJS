@@ -23,6 +23,24 @@ export default class {
     dispatcher (ctx, next) {
         const Router = new SelamiRouter(App.container, App.config.router);
         Router.dispatcher(ctx);
-        Router.dispatch();
+        const controllerInfo = Router.dispatch();
+        App.checkIfControllerExists(controllerInfo.controller);
+        const Controller = App.container[controllerInfo.controller];
+        App.checkIfControllerHasMethod(Controller, controllerInfo.method);
+        Controller[controllerInfo.method](controllerInfo.args);
+    }
+
+    checkIfControllerExists(controller) {
+        const validServices = Object.keys(this.container);
+        if (validServices.indexOf(controller) === -1) {
+            throw "Controller `" + controller + "` couldn't be found!";
+        }
+    }
+
+    checkIfControllerHasMethod(controller, method) {
+        const validMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(controller));
+        if (validMethods.indexOf(method) === -1) {
+            throw "Method `" + controller + "." + method + "` couldn't be found!";
+        }
     }
 }

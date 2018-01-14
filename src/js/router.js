@@ -16,10 +16,8 @@ export default class {
     dispatch() {
         const controller = this.pascalCase(this.controllerInfo.shift()) + "Service";
         const method = this.camelCase(this.controllerInfo.shift());
-        this.checkIfControllerExists(controller);
-        const Controller = this.container[controller];
-        this.checkIfControllerHasMethod(Controller, method);
-        return Controller[method](this.controllerInfo);
+        return {'controller': controller, 'method': method, 'parameters' : this.controllerInfo};
+        
     }
 
     checkIfControllerExists(controller) {
