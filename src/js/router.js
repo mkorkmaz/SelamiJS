@@ -14,10 +14,10 @@ export default class {
     }
 
     dispatch() {
-        let controller = this.pascalCase(this.controllerInfo[0]) + "Service";
-        let method = this.camelCase(this.controllerInfo[1]);
+        const controller = this.pascalCase(this.controllerInfo[0]) + "Service";
+        const method = this.camelCase(this.controllerInfo[1]);
         this.checkIfControllerExists(controller);
-        let Controller = this.container[controller];
+        const Controller = this.container[controller];
         this.checkIfControllerHasMethod(Controller, method);
         return Controller[method]();
     }
@@ -49,7 +49,7 @@ export default class {
     }
 
     pascalCase(str) {
-        let items = str.split("-");
+        const items = str.split("-");
         for (let index = 0; index < items.length; index++) {
             let item = items[index];
             items[index] = item[0].toUpperCase() + item.slice(1).toLowerCase();
@@ -58,7 +58,7 @@ export default class {
     }
 
     camelCase(str) {
-        let items = str.split("-");
+        const items = str.split("-");
         for (let index = 0; index < items.length; index++) {
             let item = items[index];
             items[index] = (index===0 ? item[0].toLowerCase(): item[0].toUpperCase()) + item.slice(1).toLowerCase();
