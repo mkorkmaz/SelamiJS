@@ -16,22 +16,8 @@ export default class {
     dispatch() {
         const controller = this.pascalCase(this.controllerInfo.shift()) + "Service";
         const method = this.camelCase(this.controllerInfo.shift());
-        return {'controller': controller, 'method': method, 'parameters' : this.controllerInfo};
+        return {"controller": controller, "method": method, "args" : this.controllerInfo};
         
-    }
-
-    checkIfControllerExists(controller) {
-        const validServices = Object.keys(this.container);
-        if (validServices.indexOf(controller) === -1) {
-            throw "Controller `" + controller + "` couldn't be found!";
-        }
-    }
-
-    checkIfControllerHasMethod(controller, method) {
-        const validMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(controller));
-        if (validMethods.indexOf(method) === -1) {
-            throw "Method `" + controller + "." + method + "` couldn't be found!";
-        }
     }
 
     getControllerInfo() {
