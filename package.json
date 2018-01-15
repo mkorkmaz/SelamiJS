@@ -21,8 +21,11 @@
     "nunjucks-loader": "^2.4.8",
     "page": "^1.7.1",
     "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.2",
     "webpack-dev-server": "^2.10.1",
-    "webpack-livereload-plugin": "^1.0.0"
+    "webpack-livereload-plugin": "^1.0.0",
+    "zepto": "^1.2.0"
   }
 }

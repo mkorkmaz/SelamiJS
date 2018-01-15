@@ -1,5 +1,7 @@
 const path = require("path");
 const LiveReloadPlugin = require("webpack-livereload-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const DefinePlugin = require("webpack/lib/DefinePlugin");
 
 module.exports = {
   entry: "./src/js/entry.js",
@@ -36,9 +38,16 @@ module.exports = {
     ],
   },
   plugins: [
+    new DefinePlugin({
+      "process.env": {
+        "NODE_ENV": "production"
+      }
+     }),
     new LiveReloadPlugin({
       "appendScriptTag": true
-    })
+    }),
+    new UglifyJsPlugin({extractComments:true}),
+    
   ],
   devServer: {
     compress: true,
