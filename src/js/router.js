@@ -14,7 +14,7 @@ export default class SelamiRouter {
   dispatch () {
     const controller = this.pascalCase(this.controllerInfo.shift()) + "Service";
     const method = this.camelCase(this.controllerInfo.shift());
-    return {controller, method, "args": this.controllerInfo}
+    return {controller, method, "args": this.controllerInfo};
   }
 
   getControllerInfo () {
