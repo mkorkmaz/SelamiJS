@@ -4,8 +4,9 @@ let config = {
     "name": "Bootstrap with BottleJS and Webpack",
   },
   "router": {
-    "defaultRoute": "content/home",
+    "defaultRoute": "Content/home",
     "hashbang": true,
+    "goHomeOnRefresh" : true
   },
 };
 

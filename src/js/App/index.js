@@ -8,7 +8,7 @@ export default class SelamiApp {
   }
 
   setRoutes () {
-    if (window.location.hash !== "" && window.location.hash !== "#!") {
+    if (window.location.hash !== "" && window.location.hash !== "#!" && this.config.router.goHomeOnRefresh === true) {
       window.location.href = "/";
     }
     page("*", this.dispatcher);
