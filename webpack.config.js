@@ -2,7 +2,7 @@ const path = require("path");
 const LiveReloadPlugin = require("webpack-livereload-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const DefinePlugin = require("webpack/lib/DefinePlugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CleanObsoleteChunks = require("webpack-clean-obsolete-chunks");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -37,7 +37,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['./dist/*',]),
+    new CleanWebpackPlugin(["./dist/*",]),
     new DefinePlugin({
       "process.env": {
         "NODE_ENV": "production"
