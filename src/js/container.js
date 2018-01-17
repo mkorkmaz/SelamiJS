@@ -1,8 +1,8 @@
 import config from "./config";
-
 import Bottle from "bottlejs";
 import {SelamiAppFactory, ContentFactory, ModuleFactory, } from "SelamiJS/Factories/Services";
 import $ from "jquery";
+import css from '../assets/css';
 
 const bottle = new Bottle();
 

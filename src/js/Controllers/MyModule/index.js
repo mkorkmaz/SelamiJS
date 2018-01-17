@@ -1,4 +1,3 @@
-import css from "../../../assets/main.css";
 import MainTemplate from "Templates/main.njk";
 
 export default class MyModule {
