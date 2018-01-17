@@ -11,12 +11,14 @@ npm install --save-dev
 
 ## Running webserver
 ```bash
-node_modules/webpack-dev-server/bin/webpack-dev-server.js
+npm run start
 ```
-
 
 ## Watching changes
 ```bash
-node_modules/webpack/bin/webpack.js --watch
+npm run watch
 ```
-
+## Build for production
+```bash
+npm run build
+```
