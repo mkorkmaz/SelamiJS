@@ -6,6 +6,6 @@ export default class Content {
   }
 
   home () {
-    $("#app").html(HomeTemplate.render({"name": "John Doe"}));
+    $("body").append(HomeTemplate.render({"name": "John Doe"}));
   }
 }

@@ -1,6 +1,6 @@
-import SelamiAppService from "App";
-import ModuleService from "App/MyModule";
-import ContentService from "App/Content";
+import SelamiAppService from "SelamiJS/app";
+import ModuleService from "SelamiJS/Controllers/MyModule";
+import ContentService from "SelamiJS/Controllers/Content";
 
 function SelamiAppFactory (container) {
   const config = container.config;
