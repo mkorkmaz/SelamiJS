@@ -20,5 +20,5 @@ npm run watch
 ```
 ## Build for production
 ```bash
-npm run build
+npm run build -p
 ```
