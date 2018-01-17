@@ -4,6 +4,8 @@
   "description": "Using BootleJs and Webpack",
   "main": "src/entry.js",
   "scripts": {
+    "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "watch": "node_modules/webpack/bin/webpack.js --watch",
     "build": "webpack",
 
     "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
