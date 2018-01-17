@@ -14,7 +14,6 @@ module.exports = {
     filename: "assets/js/bundle.[hash].js",
     path: path.resolve(__dirname, "dist")
   },
-  watch: true,
   resolve: {
     alias: {
       jquery: "jquery/src/jquery",
