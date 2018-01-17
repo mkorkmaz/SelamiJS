@@ -2,6 +2,7 @@ import page from "page";
 import SelamiRouter from "SelamiJS/router";
 
 export default class SelamiApp {
+
   constructor (config, container) {
     this.config = config;
     this.container = container;
@@ -44,4 +45,5 @@ export default class SelamiApp {
       throw new Error(`Method "${controller.constructor.name}.${method}" couldn't be found!`);
     }
   }
+  
 }

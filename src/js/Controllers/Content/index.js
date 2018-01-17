@@ -1,6 +1,7 @@
 import HomeTemplate from "Templates/content/home.njk";
 
 export default class Content {
+
   constructor (config) {
     this.config = config;
   }
@@ -8,4 +9,5 @@ export default class Content {
   home () {
     $("body").append(HomeTemplate.render({"name": "John Doe"}));
   }
+  
 }
